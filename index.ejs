@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Collection</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./public/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h1 class="title">Movie</h1>
+      <div class="nav-1">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="search "
+          name="movie-searched"
+        />
+        <a href="/search"></a><button class="search-btn">search</button>
+      </div>
+      <div class="nav-2">
+        <a href="/"><h2 class="navlink">Home</h2></a>
+        <a href="/create"><h2 class="navlink">Add Movie</h2></a>
+        <a href="/about"><h2 class="navlink">About</h2></a>
+      </div>
+    </nav>
+    <div class="main-body">
+      <ul class="movie-list">
+        <li>
+          <div class="card-1">
+            <img src="./public/imgs/1.jpg" />
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <p>4.1 average based on 254 reviews.</p>
+            <h1 class="movie-title">BattleShip</h1>
+          </div>
+        </li>
+        <div class="card-1">
+          <img src="./public/imgs/1.jpg" />
+          <div class="rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <p>4.1 average based on 254 reviews.</p>
+          <h1 class="movie-title">BattleShip</h1>
+        </div>
+      </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0px;
+}
+body{
+    background: linear-gradient(135deg, rgb(68, 67, 67), rgb(49, 48, 48));
+
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 100px;
+    padding-right: 50px;
+    color: rgb(163, 162, 162);
+    box-shadow: 0 8px 16px rgba(228, 228, 228, 0.1);
+}
+.title{
+    font-size: 48px;
+    line-height: 1.6;
+    margin-left: 50px;
+    background-color: transparent;
+}
+.search-input{
+    margin-top: 20px;
+    height: 40px;
+    width: 400px;
+    border-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px;
+    padding: 5px;
+    font-size: 14px;
+}
+.search-btn{
+    height: 40px;
+    font-size: large;
+    padding: 7px;
+    font-weight: bold;
+    color: rgb(163, 162, 162);
+    background-color: rgb(255, 194, 80);
+
+}
+
+.nav-2{
+    background-color: black;
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+ .navlink{
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: aliceblue;
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+    color: rgb(163, 162, 162);
+}
+.main-body{
+    display: flex;
+    justify-content: center;
+}
+.card-1{
+    background-color: aliceblue;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    padding-bottom: 20px;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+img{
+    height: 300px;
+}
+
+.fa {
+    font-size: 25px;
+  }
+  
+.checked {
+    color: orange;
+  }
+.movie-title{
+      margin: auto ;
+      margin-top: 5px;
+  }
+.movie-list{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      margin-left: 100px;
+  }
+.movie-rating{
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    gap: 50px;
+}
+.dropdown{
+    list-style-type: none;
+}
+.dropdown-content {
+    display: none;  /* Dropdown is hidden initially */
+    position: absolute;
+    list-style-type: none;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;  /* Dropdown becomes visible when hovering */
+    width: 180px;
+
+  }
+.number-list:hover{
+    background-color: rgb(163, 162, 162);
+    color: rgb(255, 194, 80);
+    cursor: pointer;
+}
