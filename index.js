@@ -48,6 +48,7 @@ app.post("/uploadMovie", (req, res) => {
     const title = req.body["movieTitle"];
     const description = req.body.description;
     const rating = req.body.rating;
+    console.log(req.body);
     if (!title || !description) {
       return res.send("Missing title or description");
     }
