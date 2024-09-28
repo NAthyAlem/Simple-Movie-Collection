@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" href="../public/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="section movie-title">
@@ -13,13 +13,32 @@
   <div class="section movie-rating">
     <label>Ratding: </label>
     <li class="dropdown">
-      <input placeholder="" readonly />
-      <ul class="dropdown-content">
-        <li class="number-list">1</li>
-        <li class="number-list">2</li>
-        <li class="number-list">3</li>
-        <li class="number-list">4</li>
+      <input id="rateInput" readonly />
+      <ul name="dropdownContent">
+        <li class="number-list" onclick="selecteRating(1)">1</li>
+        <li class="number-list" onclick="selecteRating(2)">2</li>
+        <li class="number-list" onclick="selecteRating(3)">3</li>
+        <li class="number-list" onclick="selecteRating(4)">4</li>
       </ul>
     </li>
+    <form action="/uploadImage" method="POST" enctype="multipart/form-data">
+      <label for="image">Upload Image : </label>
+      <input name="image" type="file" id="image" accept="image/*" required />
+    </form>
+    <button type="submit">Upload Image</button>
+
+    <% if (imagePath) { %>
+    <h2>Uploaded Image</h2>
+    <img
+      src="<%= imagePath %>"
+      alt="uploaded movie image"
+      style="width: 100px"
+    />
+    <% } %>
   </div>
+  <script>
+    function selecteRating(rating) {
+      document.getElementById("rateInput").value = rating;
+    }
+  </script>
 </body>
