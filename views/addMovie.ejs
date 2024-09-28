@@ -2,18 +2,27 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <form action="/uploadMovie" method="POST" enctype="multipart/form-data">
   <div class="section movie-title">
     <label>Title: </label>
-    <input placeholder="Enter the title of the Movie..." />
+    <input
+      name="movieTitle"
+      placeholder="Enter the title of the Movie..."
+      required
+    />
   </div>
   <div class="section movie-description">
     <label>description: </label>
-    <input placeholder="Enter the title of the Movie..." />
+    <input
+      name="description"
+      placeholder="Enter the title of the Movie..."
+      required
+    />
   </div>
   <div class="section movie-rating">
     <label>Ratding: </label>
     <li class="dropdown">
-      <input id="rateInput" readonly />
+      <input id="rateInput" name="rating" readonly />
       <ul name="dropdownContent">
         <li class="number-list" onclick="selecteRating(1)">1</li>
         <li class="number-list" onclick="selecteRating(2)">2</li>
@@ -21,14 +30,18 @@
         <li class="number-list" onclick="selecteRating(4)">4</li>
       </ul>
     </li>
-    <form action="/uploadImage" method="POST" enctype="multipart/form-data">
+    <div class="section movie-image">
       <label for="image">Upload Image : </label>
       <input name="image" type="file" id="image" accept="image/*" required />
+    </div>
+    
+      <button  type="submit">Upload Movie</button>
     </form>
-    <button type="submit">Upload Image</button>
 
     <% if (imagePath) { %>
     <h2>Uploaded Image</h2>
+    <h2> title : <%= title %></h2>
+    <h2> description:  <%= description %></h2>
     <img
       src="<%= imagePath %>"
       alt="uploaded movie image"

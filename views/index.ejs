@@ -45,19 +45,24 @@
             <h1 class="movie-title">BattleShip</h1>
           </div>
         </li>
-        <div class="card-1">
-          <img src="imgs/1.jpg" />
-          <div class="rating">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
+        <% if(locals.posts){ %> <% locals.posts.forEach(post => { %>
+        <li>
+          <div class="card-1">
+            <img src="<%= post.imagePath %>" />
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <p><% post.rating %> average based on 254 reviews.</p>
+            <h1 class="movie-title"><%= post.title %></h1>
+            <h2><%= post.description %></h2>
           </div>
-          <p>4.1 average based on 254 reviews.</p>
-          <h1 class="movie-title">BattleShip</h1>
-        </div>
-      </li>
+        </li>
+
+        <% }) %> <% } %>
       </ul>
     </div>
   </body>
