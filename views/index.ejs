@@ -42,7 +42,9 @@
               <span class="fa fa-star"></span>
             </div>
             <p>4.1 average based on 254 reviews.</p>
+
             <h1 class="movie-title">BattleShip</h1>
+            <h2>an action movie</h2>
           </div>
         </li>
         <% if(locals.posts){ %> <% locals.posts.forEach(post => { %>
@@ -57,7 +59,7 @@
               <span class="fa fa-star"></span>
               <% } %> <% } %>
             </div>
-            <p><%= post.rating %> average based on 254 reviews.</p>
+            <p><%= post.rating %> average based on <%= post.rand %> reviews.</p>
             <h1 class="movie-title"><%= post.title %></h1>
             <h2><%= post.description %></h2>
           </div>

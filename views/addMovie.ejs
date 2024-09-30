@@ -1,54 +1,52 @@
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="addMovie-main">
   <form action="/uploadMovie" method="POST" enctype="multipart/form-data">
-  <div class="section movie-title">
-    <label>Title: </label>
-    <input
-      name="movieTitle"
-      placeholder="Enter the title of the Movie..."
-      required
-    />
-  </div>
-  <div class="section movie-description">
-    <label>description: </label>
-    <input
-      name="description"
-      placeholder="Enter the title of the Movie..."
-      required
-    />
-  </div>
-  <div class="section movie-rating">
-    <label>Ratding: </label>
-    <li class="dropdown">
-      <input id="rateInput" name="rating" readonly />
-      <ul name="dropdownContent">
-        <li class="number-list" onclick="selecteRating(1)">1</li>
-        <li class="number-list" onclick="selecteRating(2)">2</li>
-        <li class="number-list" onclick="selecteRating(3)">3</li>
-        <li class="number-list" onclick="selecteRating(4)">4</li>
-      </ul>
-    </li>
-    <div class="section movie-image">
-      <label for="image">Upload Image : </label>
+    <div class="section movie-title">
+      <label>Title </label>
+      <input
+        class="addedMovie-title"
+        name="movieTitle"
+        placeholder="Enter the title of the Movie..."
+        required
+      />
+    </div>
+    <div class="section movie-description">
+      <label>description </label>
+      <input
+        class="addedMovie-description"
+        name="description"
+        placeholder="Enter the title of the Movie..."
+        required
+      />
+    </div>
+    <div class="section add-movie-rating">
+      <label>Rating </label>
+      <li class="dropdown">
+        <input id="rateInput" name="rating" readonly />
+        <ul name="dropdownContent">
+          <li class="number-list" onclick="selecteRating(1)">1</li>
+          <li class="number-list" onclick="selecteRating(2)">2</li>
+          <li class="number-list" onclick="selecteRating(3)">3</li>
+          <li class="number-list" onclick="selecteRating(4)">4</li>
+        </ul>
+      </li>
+    </div>
+    <div class="section addedMovie-image">
+      <label for="image">Upload Image </label>
       <input name="image" type="file" id="image" accept="image/*" required />
     </div>
-    
-      <button  type="submit">Upload Movie</button>
-    </form>
 
-    <% if (imagePath) { %>
-    <h2>Uploaded Image</h2>
-    <h2> title : <%= title %></h2>
-    <h2> description:  <%= description %></h2>
-    <img
-      src="<%= imagePath %>"
-      alt="uploaded movie image"
-      style="width: 100px"
-    />
-    <% } %>
-  </div>
+    <button class="submitButton" type="submit">Upload Movie</button>
+  </form>
+
   <script>
     function selecteRating(rating) {
       document.getElementById("rateInput").value = rating;

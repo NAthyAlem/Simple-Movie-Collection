@@ -28,9 +28,6 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 }, //sets the size of image to be less than 5mb
 }).single("image");
 
-app.get("/", (req, res) => {
-  res.render("index.ejs");
-});
 app.get("/create", (req, res) => {
   res.render("addMovie.ejs", {
     imagePath: null,
@@ -48,7 +45,7 @@ app.post("/uploadMovie", (req, res) => {
     const title = req.body["movieTitle"];
     const description = req.body.description;
     const rating = req.body.rating;
-    console.log(req.body);
+    const rand = Math.floor(Math.random() * 100);
     if (!title || !description) {
       return res.send("Missing title or description");
     }
@@ -59,12 +56,13 @@ app.post("/uploadMovie", (req, res) => {
       description: description,
       rating: rating,
       imagePath: imagePath,
+      rand: rand,
     });
-
-    res.render("index.ejs", {
-      posts: posts,
-    });
+    res.redirect("/");
   });
+});
+app.get("/", (req, res) => {
+  res.render("index.ejs", { posts: posts });
 });
 app.listen(port, () => {
   console.log(`Listening to server on port ${port}`);
