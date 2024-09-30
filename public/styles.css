@@ -5,7 +5,8 @@
 }
 
 body {
-    background: linear-gradient(135deg, #444343, #313030);
+    height: fit-content;
+    background: linear-gradient(135deg, #888282, #313030);
     font-family: 'Roboto', sans-serif;
     color: #a3a2a2;
     transition: background-color 0.3s ease;
@@ -72,6 +73,7 @@ nav {
     justify-content: space-evenly;
     padding: 10px;
     gap: 10px;
+    text-decoration: none;
     border-radius: 8px;
 }
 
@@ -84,7 +86,8 @@ nav {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navlink:hover {
+.navlink:hover, .navlink:link, .navlink:visited, .navlink:active {
+    text-decoration: none;
     background-color: #ffc250;
     color: #000;
 }
@@ -110,6 +113,7 @@ nav {
 .card-1:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 img {
@@ -120,7 +124,6 @@ img {
 
 .fa {
     font-size: 25px;
-    color: #ffc250;
 }
 
 .checked {
@@ -137,7 +140,9 @@ img {
 
 .movie-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+    list-style: none;
     gap: 20px;
     padding: 20px;
 }
